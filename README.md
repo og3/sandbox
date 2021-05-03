@@ -1,24 +1,8 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# sandbox
+## railsでシンプルなCRADができるサイト
+- このサイトを軸にいろいろいじっていく
+- どう実装するか疑問に思ったことはここで試す
+## 人に使ってもらうことでセキュリティの必要性について学ぶ
+- よからぬ操作をしっかり防ぐ練習をする
+## 実装過程は記事にする
+- 技術ブログへ
