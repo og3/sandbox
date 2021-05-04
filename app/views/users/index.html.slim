@@ -9,11 +9,12 @@ table
       tr
         td
           = user.name
-        td
-          = link_to 'Show', user
-        td
-          = link_to 'Edit', edit_user_path(user)
-        td
-          = link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }
+        / TODO:以下は管理者のみ利用可能にする
+        / td
+        /   = link_to 'Show', user
+        / td
+        /   = link_to 'Edit', edit_user_path(user)
+        / td
+        /   = link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }
 br
 = link_to 'New User', new_user_path
