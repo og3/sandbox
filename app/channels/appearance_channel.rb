@@ -1,4 +1,5 @@
 class AppearanceChannel < ApplicationCable::Channel
+  # クライアントがサーバーに接続したと同時に実行されるメソッド
   def subscribed
     member = User.find(current_user.id)
     return unless member
@@ -6,6 +7,7 @@ class AppearanceChannel < ApplicationCable::Channel
     stream_from "appearance_user"
   end
 
+  # クライアントの接続が解除されたと同時に実行されるメソッド
   def unsubscribed
     member = User.find(current_user.id)
     return unless member

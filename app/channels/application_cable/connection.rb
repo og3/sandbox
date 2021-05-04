@@ -1,5 +1,6 @@
 module ApplicationCable
   class Connection < ActionCable::Connection::Base
+    # HTTP とは異なり毎回認証情報が送られたりはしないので、コネクション確立時に「このコネクションは誰のものか」をサーバー側で管理する必要がある。
     identified_by :current_user
 
     def connect
