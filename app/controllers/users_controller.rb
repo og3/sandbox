@@ -3,8 +3,6 @@ class UsersController < ApplicationController
 
   # GET /users or /users.json
   def index
-    # TODO:この場所でいいかは検討する
-    cookies.encrypted[:user_id] = current_user.id
     @online_users = User.where.not(online_at: nil).order(online_at: :desc)
     @users = User.all
   end

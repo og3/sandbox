@@ -1,0 +1,7 @@
+- if member.online == true
+  <li id="user_#{member.id}" class="user-login">
+    = member.name + "：オンライン(DB)"
+  </li>
+- elsif member.online == false
+  li.user-logout
+    = member.name + "：オフライン(DB)"

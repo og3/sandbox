@@ -3,7 +3,11 @@ class AppearanceChannel < ApplicationCable::Channel
   def subscribed
     member = User.find(current_user.id)
     return unless member
+    before_member_online_status = member.online
     member.update_attributes(online: true, online_at: DateTime.now)
+    if before_member_online_status != member.online
+      AppearanceBroadcastJob.perform_later(member)
+    end
     stream_from "appearance_user"
   end
 
@@ -11,6 +15,10 @@ class AppearanceChannel < ApplicationCable::Channel
   def unsubscribed
     member = User.find(current_user.id)
     return unless member
+    before_member_online_status = member.online
     member.update_attributes(online: false, online_at: DateTime.now)
+    if before_member_online_status != member.online
+      AppearanceBroadcastJob.perform_later(member)
+    end
   end
 end
