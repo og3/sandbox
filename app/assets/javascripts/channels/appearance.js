@@ -9,7 +9,7 @@ App.appearance = App.cable.subscriptions.create({
     };
     if (user.online === false){
       var element = document.getElementById("user_" + user.id);
-        element.innerHTML = user.name + "：オフライン(js)" + " 最終オンライン時間：" + user.online_at
+        element.innerHTML = user.name + "：オフライン(js)"
     };
   }
 });
