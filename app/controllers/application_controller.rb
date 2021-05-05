@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   private
   def set_current_user_id_on_cookies
     return unless current_user
-    cookies.encrypted[:user_id] ||= current_user.id
+    cookies.encrypted[:user_id] = current_user.id
   end
 
   def configure_permitted_parameters
