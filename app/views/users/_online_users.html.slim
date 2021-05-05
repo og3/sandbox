@@ -4,4 +4,4 @@
   </li>
 - elsif member.online == false
   li.user-logout
-    = member.name + "：オフライン(DB)"
+    = member.name + "：オフライン(DB)" + " 最終オンライン時間：" + member.online_at.strftime('%Y/%m/%d %H:%M:%S')
