@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
   private
   def set_current_user_id_on_cookies
     return unless current_user
+    # FIXME:全てのアクションのたびにクッキーにidをセットするのは不自然
     cookies.encrypted[:user_id] = current_user.id
   end
 
