@@ -1,0 +1,27 @@
+h1
+  | All_Users
+table
+  thead
+    tr
+      th[colspan="3"]
+  tbody
+    - @users.each do |user|
+      tr
+        td
+          = user.name
+        / TODO:以下は管理者のみ利用可能にする
+        / td
+        /   = link_to 'Show', user
+        / td
+        /   = link_to 'Edit', edit_user_path(user)
+        / td
+        /   = link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }
+h1
+  | Online_Users
+table
+  thead
+    tr
+      th[colspan="3"]
+  tbody
+    span#users-list.logbox
+      = render partial: 'online_users', collection: @online_users, as: :member

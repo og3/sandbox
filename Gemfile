@@ -5,6 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'slim-rails'
 gem 'dotenv-rails'
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -39,9 +40,13 @@ gem 'jbuilder', '~> 2.5'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'pry-rails'
+  gem 'pry-byebug'
+  gem 'pry-doc'
 end
 
 group :development do
+  gem 'html2slim'
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '~> 3.0.5'
