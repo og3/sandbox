@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210504074517) do
+ActiveRecord::Schema.define(version: 20210508223659) do
+
+  create_table "monsters", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name"
+    t.string   "type"
+    t.integer  "level"
+    t.integer  "hours_of_next_evolution"
+    t.string   "before_evolution_monster"
+    t.integer  "luck"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",                   default: "", null: false
