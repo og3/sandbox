@@ -1,15 +1,12 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  before_action :set_current_user_id_on_cookies
+  before_action :set_or_unset_current_user_id_on_cookies
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   private
 
-  def set_current_user_id_on_cookies
-    return unless current_user
-
-    # FIXME: 全てのアクションのたびにクッキーにidをセットするのは不自然
-    cookies.encrypted[:user_id] = current_user.id
+  def set_or_unset_current_user_id_on_cookies
+    cookies.encrypted[:user_id] = (current_user.id if current_user)
   end
 
   def configure_permitted_parameters
